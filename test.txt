@@ -1,0 +1,17 @@
+*** Settings ***
+Library    Selenium2Library
+Library    OperatingSystem
+
+*** Variables ***
+
+*** Testcases ***
+Test with IE
+	#Set Environment Variable    webdriver.ie.driver    r:\course\IEDriverServer.exe
+	Open Browser    http://www.kcprofessional.com
+	Maximize Browser Window
+	Input Text    q    kleenex
+	Click Element    xpath=//div[2][@class='btn_search']
+	Wait Until Page Loaded
+	Close Browser
+
+*** Keyword ***
