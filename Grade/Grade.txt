@@ -1,0 +1,40 @@
+*** Settings ***
+Library    Selenium2Library
+
+*** Variables ***
+
+*** Testcases ***
+Grade A Converter - 80 Point
+	Open Browser    http://demo-jenkins-web.herokuapp.com/
+	Input Text    score    80
+	Click Button    convert
+	Page Should Contain    A
+	Close Browser
+
+Grade B Converter - 75 Point
+	Open Browser    http://demo-jenkins-web.herokuapp.com/
+	Input Text    score    75
+	Click Button    convert
+	Page Should Contain    B
+	Close Browser
+
+Grade C Converter - 68 Point
+	Open Browser    http://demo-jenkins-web.herokuapp.com/
+	Input Text    score    68
+	Click Button    convert
+	Page Should Contain    C
+	Close Browser
+
+Grade D Converter - 52 Point
+	Open Browser    http://demo-jenkins-web.herokuapp.com/
+	Input Text    score    52
+	Click Button    convert
+	Page Should Contain    D
+	Close Browser
+
+Grade F Converter - 13 Point
+	Open Browser    http://demo-jenkins-web.herokuapp.com/
+	Input Text    score    13
+	Click Button    convert
+	Page Should Contain    F
+	Close Browser
