@@ -1,0 +1,27 @@
+*** Settings ***
+Library    Selenium2Library
+
+*** Variables ***
+${DEMO URL}    http://demo-jenkins-web.herokuapp.com/
+
+*** Testcases ***
+Grade A Converter
+	Go to grade page
+	Enter score    80
+	Expected grade result    A
+
+
+*** Keywords ***
+Go to grade page
+	Open Browser    ${DEMO URL}
+	Maximize Browser Window
+
+Enter score
+	[Arguments]    ${Score}
+	Input Text    score    ${Score}
+	Click Button    convert
+
+Expected grade result
+	[Arguments]    ${Expected_grade}
+	Wait Until Page Contains    ${Expected_grade}
+	Close Browser
